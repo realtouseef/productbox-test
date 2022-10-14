@@ -1,31 +1,37 @@
-import { Box, Flex, HStack } from "@chakra-ui/react";
+import { Cart } from "@/utils/CartContext";
 import Link from "next/link";
+import { useContext } from "react";
 import { FaShoppingCart } from "react-icons/fa";
-import { NavLinkTypes } from "src/types";
+import { NavLinkTypes } from "src/types/types";
 
 export default function Header() {
+  const { cart } = useContext(Cart);
+
   const navLinks: NavLinkTypes[] = [
     { id: 1, href: "/add-items", linkName: "Add Products" },
   ];
   return (
-    <Box as="nav">
-      <Box bg="gray.100" p="20px">
-        <Flex alignItems={"center"} justifyContent={"space-between"}>
+    <nav>
+      <div className="bg-slate-200 p-5">
+        <div className="flex items-center justify-between">
           <Link href="/">RandoStore</Link>
-          <HStack spacing={"20px"}>
+          <div className="space-x-5">
             {navLinks.map(({ id, href, linkName }) => {
               return (
                 <Link href={href} key={id}>
-                  <a _hover={{ bg: "teal.600" }}>{linkName}</a>
+                  <a>{linkName}</a>
                 </Link>
               );
             })}
-          </HStack>
-          <Box>
-            <FaShoppingCart fontSize={"28px"} />
-          </Box>
-        </Flex>
-      </Box>
-    </Box>
+          </div>
+          <Link href="/basket">
+            <a className="text-2xl flex items-center justify-center space-x-2">
+              <FaShoppingCart />
+              <p>{cart.length}</p>
+            </a>
+          </Link>
+        </div>
+      </div>
+    </nav>
   );
 }

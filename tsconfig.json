@@ -4,7 +4,9 @@
     "paths": {
       "@/api/*": ["./src/pages/api/*"],
       "@/components/*": ["./src/components/*"],
-      "@/pages/*": ["./src/pages/*"]
+      "@/pages/*": ["./src/pages/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/types/*": ["./src/types/*"]
     },
     "target": "ES2022",
     "lib": ["dom", "dom.iterable", "esnext"],

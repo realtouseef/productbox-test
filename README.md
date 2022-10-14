@@ -8,7 +8,9 @@ bascially creating the crud functionality
 ## Tech Stack
 
 - NextJS
-- Chakra-ui
+- TypeScript
+- TailwindCSS
+- React-icons
 
 ## Asked by Interviewer
 
@@ -64,8 +66,3 @@ returned data from the above example
 4-8 hours, but max 12 hours
 
 ## TODOs
-
-- add a cart option to the top of each page, shows how many items are added to the cart
-  -- once the cart is clicked, takes you to checkout page where you can see all the chosen items
-
-- use Local Storage for implementing the **cart** functionality

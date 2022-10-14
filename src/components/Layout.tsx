@@ -1,14 +1,12 @@
-import { Box } from "@chakra-ui/react";
+import { ChildrenProps } from "@/types/types";
 import Header from "./Header";
 
-type ChildProps = { children: React.ReactNode };
-
-const Layout: React.FunctionComponent<ChildProps> = ({ children }) => {
+const Layout: React.FunctionComponent<ChildrenProps> = ({ children }) => {
   return (
-    <Box as="section">
+    <section>
       <Header />
-      <Box as="main">{children}</Box>
-    </Box>
+      <main>{children}</main>
+    </section>
   );
 };
 
