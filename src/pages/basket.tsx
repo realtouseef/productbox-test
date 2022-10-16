@@ -1,34 +1,35 @@
-// shows every products/items
-
-import SingleProduct from "@/components/SingleProduct";
-import { SingleProductProps } from "@/types/types";
-import { Cart } from "@/utils/CartContext";
-import { useContext } from "react";
+import Head from "next/head";
+import { useEffect, useState } from "react";
+import { useShoppingCart } from "@/utils/ShoppingCartContext";
+import CartItems from "@/components/CartItems";
 
 const basket = () => {
-  const { cart } = useContext(Cart);
+  const [totalPrice, setTotalPrice] = useState<number>();
+  const { cartItem, cartItemsQuantity } = useShoppingCart();
+
+  // allItems + item.price * quantity
+  console.log(cartItemsQuantity);
 
   return (
     <>
-      <section>
-        {cart.length === 0 ? (
+      <Head>
+        <title>Cart</title>
+      </Head>
+      <h1 className="text-3xl font-bold">Total: Rs.{totalPrice}</h1>
+      <p className="text-xl font-bold">
+        {/* Total Items: {cartItemsQuantity && cartItemsQuantity} */}
+      </p>
+      <div>
+        {cartItemsQuantity === 0 ? (
           <p>Cart is Empty</p>
         ) : (
-          <section>
-            {cart.map(({ id, name, price, img }: SingleProductProps) => {
-              return (
-                <SingleProduct
-                  id={id}
-                  name={name}
-                  price={price}
-                  img={img}
-                  key={id}
-                />
-              );
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
+            {cartItem?.map((item) => {
+              return <CartItems {...item} key={item.id} />;
             })}
-          </section>
+          </div>
         )}
-      </section>
+      </div>
     </>
   );
 };

@@ -17,14 +17,14 @@ const Products = () => {
   return (
     <>
       <main className="grid grid-cols-2 lg:grid-cols-4 place-items-center my-20 gap-10 ">
-        {items?.map(({ id, name, price, img }) => {
+        {items?.map(({ id, name, img, price }) => {
           return (
             <SingleProduct
+              key={id}
               id={id}
               name={name}
-              price={price}
               img={img}
-              key={id}
+              price={price}
             />
           );
         })}

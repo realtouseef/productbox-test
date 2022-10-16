@@ -1,4 +1,4 @@
-import Products from "@/components/Products";
+import Products from "@/components/Products/Products";
 import type { NextPage } from "next";
 import Head from "next/head";
 

@@ -64,5 +64,3 @@ returned data from the above example
 ## Deadline
 
 4-8 hours, but max 12 hours
-
-## TODOs
