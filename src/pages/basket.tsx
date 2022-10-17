@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useShoppingCart } from "@/utils/ShoppingCartContext";
 import CartItems from "@/components/CartItems";
 
-const basket = () => {
+const basket: React.FunctionComponent = () => {
   const { cartItem, cartItemsQuantity } = useShoppingCart();
 
   return (
