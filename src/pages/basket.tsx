@@ -8,7 +8,10 @@ const basket = () => {
   const { cartItem, cartItemsQuantity } = useShoppingCart();
 
   // allItems + item.price * quantity
-  console.log(cartItemsQuantity);
+  // cartItemsQuantity (total quantity in the cart atm)
+  // multiply it with the price of each items.
+
+  // setTotalPrice( * cartItemsQuantity);
 
   return (
     <>
@@ -16,8 +19,8 @@ const basket = () => {
         <title>Cart</title>
       </Head>
       <h1 className="text-3xl font-bold">Total: Rs.{totalPrice}</h1>
-      <p className="text-xl font-bold">
-        {/* Total Items: {cartItemsQuantity && cartItemsQuantity} */}
+      <p className="text-xl font-semibold">
+        Total Items: {cartItemsQuantity && cartItemsQuantity}
       </p>
       <div>
         {cartItemsQuantity === 0 ? (

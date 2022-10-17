@@ -1,5 +1,5 @@
 import { ChildrenProps } from "@/types/types";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 import { useLocalStorage } from "src/hooks/useLocalStorage";
 
 type ShoppingCartContextProps = {
@@ -9,8 +9,6 @@ type ShoppingCartContextProps = {
   cartItemsQuantity: number;
   cartItem: CartItemProps[];
 };
-
-// add item to the cart
 
 export type CartItemProps = {
   id: number;
