@@ -2,6 +2,10 @@
 
 - The Items JSON REST API is exposed at `http://localhost:3000/api/items`
 
+## Live Site
+
+[Productbox Test](https://productbox-test.vercel.app/)
+
 ## Tech Stack
 
 - NextJS
